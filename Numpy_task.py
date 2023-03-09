@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from typing import List
 from math import gcd
 from fractions import Fraction
@@ -201,10 +201,16 @@ if __name__ == "__main__":
         ]
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def user_function():
-        result = [f"TEST_CASE_1 {solution(sol1)}", f"TEST_CASE_2 {solution(sol2)}"]
-        return result
+        if(request.method == 'GET'):
+            m1 = [[0, 1, 0, 0, 0, 1],[4, 0, 0, 3, 2, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]]
+            m2 = [[0, 2, 1, 0, 0], [0, 0, 0, 3, 4], [0, 0, 0, 0, 0], [0, 0, 0, 0,0], [0, 0, 0, 0, 0]]
+
+            testCase1 = solution(m1)
+            testCase2 = solution(m2)
+
+            return "Test_Case_1 = {} -------- Test_Case_2 = {}".format(testCase1,testCase2)
 
 if __name__ == "__main__":
     app.run()
