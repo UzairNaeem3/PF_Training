@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Mongo & Postgres Task </h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="file">Select a Zip file to upload:</label>
+      <input type="file" id="file" name="file">
+      <input type="submit" value="Upload">
+    </form>
+
+</body>
+</html>
+<style>
+    form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    }
+
+    label {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    input[type="file"] {
+      border: none;
+      background-color: #f8f8f8;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0062cc;
+    }
+</style>
